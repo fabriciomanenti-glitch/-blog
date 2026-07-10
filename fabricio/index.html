@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="fabricio davyd">
-    <title>Página Estilizada com Imagem</title>
+    <title>Blog Interativo com Limite de Likes</title>
     
     <style>
         /* Estilização do Cabeçalho */
@@ -21,31 +21,96 @@
         main {
             background-color: #FFFFFF;
             color: #183C63;
-            text-align: center;
             max-width: 800px;
             margin: 0 auto;
             padding: 16px;
         }
 
-        /* Nova estilização da imagem adicionada nesta aula */
+        /* O Flexbox age individualmente em cada ARTIGO */
+        article {
+            display: flex;
+            align-items: center; 
+            gap: 20px;
+            margin-bottom: 30px; 
+        }
+
+        /* Estilização das imagens dos artigos */
         img {
             width: 80px;
             height: 80px;
+        }
+
+        /* Classe para deixar o nome do autor em negrito */
+        .artigo-autor {
+            font-weight: bold;
+        }
+
+        /* Estilização dos botões de interação */
+        button {
+            background: #183C63;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            margin-right: 5px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="Gemini_Generated_Image_wc3uwpwc3uwpwc3u.png" alt="logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
         <h1>Meu Primeiro Blog</h1>
-        <p>Autor: fabricio davyd</p>
+        <p>Criado por: fabricio davyd</p>
     </header>
 
     <main>
-        <h2>Primeiro Post</h2>
-        <p>Este é o conteúdo do primeiro post. Agora ele possui espaçamento interno (padding) de 16px, evitando que o texto fique colado nas bordas e tornando a leitura muito mais agradável.</p>
+        <article>
+            <img src="Gemini_Generated_Image_wc3uwpwc3uwpwc3u.png" alt="logotipo conceitual de tecnologia e educação.">
+            
+            <div>
+                <h2>Meu primeiro post</h2>
+                <p class="artigo-autor">Por: fabricio davyd</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia.</p>
+                <button class="btn-interacao">❤️ <span>0</span></button>
+                <button class="btn-interacao">👍 <span>0</span></button>
+            </div>
+        </article>
+
+        <article>
+            <img src="Gemini_Generated_Image_wc3uwpwc3uwpwc3u.png" alt="logotipo conceitual de tecnologia e educação.">
+            
+            <div>
+                <h2>Criando o segundo post</h2>
+                <p class="artigo-autor">Por: fabricio davyd</p>
+                <p>Olha só que legal! Agora conseguimos estruturar o blog com a tag article. Isso permite adicionar quantos posts quisermos sem quebrar o visual da página.</p>
+                <button class="btn-interacao">❤️ <span>0</span></button>
+                <button class="btn-interacao">👍 <span>0</span></button>
+            </div>
+        </article>
     </main>
+
+    <script>
+        const botoes = document.querySelectorAll(".btn-interacao");
+
+        botoes.forEach(function (botao) {
+            let curtiu = false;
+
+            botao.addEventListener("click", function botaoClicado() {
+                let texto = botao.querySelector("span");
+
+                if (curtiu === false) {
+                    texto.textContent++;
+                    curtiu = true;
+                } else {
+                    texto.textContent--;
+                    curtiu = false;
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
