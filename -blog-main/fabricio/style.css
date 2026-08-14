@@ -1,62 +1,119 @@
-/* Responsividade para a página inteira */
-body {
+:root {
+    --cor-primaria: #183C63;
+    --cor-secundaria: #3782d2;
+    --cor-fundo: #ffffff;
+    --cor-texto: #151428;
+    --cor-contraste: #f3eef7;
+    --cor-botao: #f9f9f9;
+    --fonte-texto: 'Segoe UI', sans-serif;
+  }
+  
+  .tema-escuro {
+    --cor-primaria: #c9e3ff;
+    --cor-secundaria: #3782d2;
+    --cor-fundo: #121212;
+    --cor-texto: #f3eef7;
+    --cor-contraste: #1f1f1f;
+    --cor-botao: #2a2a2a;
+  }
+  
+  .tema-escuro a {
+    color: var(--cor-secundaria);
+  }
+  
+  .tema-escuro p {
+    color: var(--cor-texto);
+  }
+  
+  .tema-escuro header p {
+    color: var(--cor-contraste);
+  }
+  
+  body {
     max-width: 100vw;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: var(--fonte-texto);
+    font-size: 18px;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: background-color 0.3s, color 0.3s;
   }
   
-  /* Cabeçalho ocupando a largura total */
   header {
-    background-color: #183C63;
-    color: #FFFFFF;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
     text-align: center;
     padding: 16px;
   }
   
-  /* Conteúdo principal como container Flexbox */
-  main {
-    background-color: #FFFFFF;
-    color: #183C63;
-    padding: 16px;
-    display: flex;
-    flex-wrap: wrap; /* Permite que os cards quebrem para a linha de baixo */
+  header h1 {
+    margin: 0;
   }
   
-  /* Estilização dos posts em formato de Cards */
+  header p {
+    margin-top: 8px;
+  }
+  
+  main {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
   article {
     display: flex;
-    border: 1px solid #183C63;
+    border: 1px solid var(--cor-primaria);
+    background-color: var(--cor-contraste);
     margin: 16px;
     gap: 16px;
     padding: 16px;
-    flex: 1 1 25%; /* Cresce, encolhe e tenta ocupar ~25% da largura (3 por linha) */
-    flex-direction: column; /* Organiza o conteúdo do card em coluna */
-    align-items: center; /* Centraliza os itens na horizontal */
-    text-align: center; /* Centraliza os textos */
-    justify-content: center; /* Centraliza o conteúdo no eixo vertical */
+    flex: 1 1 25%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    border-radius: 8px;
   }
   
-  /* Imagens ajustadas dentro dos cards */
   img {
     width: 80px;
     height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
   }
   
-  /* Destaque do autor */
   .artigo-autor {
     font-weight: bold;
+    margin: 4px 0;
   }
   
-  /* Botões de interação */
+  .artigo-fonte {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  
+  .artigo-fonte a {
+    color: var(--cor-primaria);
+    text-decoration: underline;
+  }
+  
   button.btn-interacao {
-    background-color: #183C63;
-    color: white;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
     border: none;
-    padding: 6px 12px;
+    padding: 8px 14px;
     margin-right: 5px;
     margin-top: 10px;
     cursor: pointer;
     border-radius: 4px;
     font-size: 14px;
+    transition: background-color 0.2s;
+  }
+  
+  button.btn-interacao:hover {
+    background-color: var(--cor-secundaria);
   }

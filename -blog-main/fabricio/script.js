@@ -1,18 +1,28 @@
+const botaoTema = document.querySelector("#btn-tema");
+
+if (botaoTema) {
+  botaoTema.addEventListener("click", function () {
+    document.body.classList.toggle("tema-escuro");
+  });
+}
+
 const botoes = document.querySelectorAll(".btn-interacao");
 
 botoes.forEach(function (botao) {
   let curtiu = false;
 
   botao.addEventListener("click", function botaoClicado() {
-    console.log("fui clicado");
     let texto = botao.querySelector("span");
+    let contador = parseInt(texto.textContent);
 
     if (curtiu === false) {
-      texto.textContent++;
+      contador++;
       curtiu = true;
     } else {
-      texto.textContent--;
+      contador--;
       curtiu = false;
     }
+
+    texto.textContent = contador;
   });
 });
