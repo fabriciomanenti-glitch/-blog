@@ -1,0 +1,81 @@
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin-top: 8px;
+}
+
+main {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  padding: 16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+article {
+  display: flex;
+  border: 1px solid var(--cor-primaria);
+  background-color: var(--cor-contraste);
+  margin: 16px;
+  gap: 16px;
+  padding: 16px;
+  flex: 1 1 25%;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.artigo-autor {
+  font-weight: bold;
+  margin: 4px 0;
+}
+
+.artigo-fonte {
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.artigo-fonte a {
+  color: var(--cor-primaria);
+  text-decoration: underline;
+}
+
+button.btn-interacao {
+  background-color: var(--cor-primaria);
+  color: var(--cor-fundo);
+  border: none;
+  padding: 8px 14px;
+  margin-right: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+button.btn-interacao:hover {
+  background-color: var(--cor-secundaria);
+}
+
+.btn-tema-escuro {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  font-size: 32px;
+  padding: 12px;
+  background-color: var(--cor-primaria);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+}
